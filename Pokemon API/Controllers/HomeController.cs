@@ -33,8 +33,8 @@ namespace Pokemon_API.Controllers
             Pokemon myPokemon = parsedString.ToObject<Pokemon>();
 
             // Now we have an object that has all of the data of the pokemon we request
-            Debug.WriteLine(myPokemon.moves[0].move.name);
-            return View();
+            // Debug.WriteLine(myPokemon.moves[0].move.name);
+            return View(myPokemon);
         }
 
     }
