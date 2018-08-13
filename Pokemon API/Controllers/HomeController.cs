@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Net;
 using System.Web.Mvc;
 
 namespace Pokemon_API.Controllers
@@ -10,21 +7,12 @@ namespace Pokemon_API.Controllers
     {
         public ActionResult Index()
         {
+            // Create request to API
+            WebRequest request = WebRequest.Create("http://pokeapi.co/api/v2/pokemon/10");
+            // Send that request off
+            WebResponse response = request.GetResponse();
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }
